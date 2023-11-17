@@ -1,0 +1,54 @@
+﻿@using Entity.Models
+@model List<Calificacion>
+
+<div class="row">
+	<div class="span8">
+	</div>
+	<div class="span4">
+		@Html.ActionLink("Crear", "Create", null, new { @class = "btn btn-primary pull-right" })
+	</div>
+</div>
+
+<table class="table table-bordered table-striped table-condensed table-hover">
+	<thead>
+		<tr>
+			<th></th>
+			<th>
+				<small>@Html.DisplayNameFor(model => model[0].IdAsignatura)</small>
+			</th>
+			<th>
+				<small>@Html.DisplayNameFor(model => model[0].Corte)</small>
+			</th>
+			<th>
+				<small>@Html.DisplayNameFor(model => model[0].Nota)</small>
+			</th>
+			<th>
+				<small>Estudiante</small>
+			</th>
+		</tr>
+	</thead>
+@foreach (var item in (List<Calificacion>)Model) {
+	<tr>
+
+		<td>
+			<div class="btn-group">
+					<a href="@Url.Action("Edit", new { Id = item.Id })" class="btn btn-mini btn-warning"><i class="icon-pencil"></i> Editar</a>
+			</div>
+		</td>
+		<td>
+			<select asp-for="@item.IdAsignatura" asp-items="@((IEnumerable<SelectListItem>)ViewBag.Asignaturas)" class="form-control-plaintext" disabled="disabled">
+			</select>
+		</td>
+		<td>
+			<small>@item.Corte</small>
+		</td>
+		<td>
+			<small>@item.Nota</small>
+		</td>
+		<td>
+				<select asp-for="@item.IdEstudiante" asp-items="@((IEnumerable<SelectListItem>)ViewBag.Estudiantes)" class="form-control-plaintext" disabled="disabled">
+				</select>
+		</td>
+	</tr>
+}
+</table>

@@ -1,0 +1,32 @@
+﻿@model Entity.Models.Calificacion
+
+<div class="control-group">
+	@Html.LabelFor(model => model.IdAsignatura, new { @class = "control-label" })
+	<div class="controls">
+		<select asp-for="IdAsignatura" asp-items="@((IEnumerable<SelectListItem>)ViewBag.Asignaturas)" class="">
+		</select>
+		@Html.ValidationMessageFor(model => model.IdAsignatura)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.IdEstudiante, new { @class = "control-label" })
+	<div class="controls">
+		<select asp-for="IdEstudiante" asp-items="@((IEnumerable<SelectListItem>)ViewBag.Estudiantes)" class="">
+		</select>
+		@Html.ValidationMessageFor(model => model.IdEstudiante)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Corte, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Corte)
+		@Html.ValidationMessageFor(model => model.Corte)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Nota, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Nota)
+		@Html.ValidationMessageFor(model => model.Nota)
+	</div>
+</div>

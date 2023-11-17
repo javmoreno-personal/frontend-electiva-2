@@ -1,0 +1,25 @@
+﻿@{
+	ViewBag.Title = "Tables";
+}
+
+<ul class="breadcrumb">
+	<li class="active">Tablas</li>
+</ul>
+
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Nombre de la tabla</th>
+		</tr>
+	</thead>
+
+	<tr>
+		<td>@Html.ActionLink("Calificaciones", "Index", "Calificaciones")</td>
+	</tr>
+	<tr>
+		<td>@Html.ActionLink("Estudiantes", "Index", "Estudiantes")</td>
+	</tr>
+	<tr>
+		<td>@Html.ActionLink("Asignaturas", "Index", "Asignaturas")</td>
+	</tr>
+</table>

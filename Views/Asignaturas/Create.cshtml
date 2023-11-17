@@ -1,0 +1,19 @@
+﻿@model Entity.Models.Asignatura
+@{
+	//ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Asignaturas", FormMethod.Post, new { @class = "form-horizontal" })) {
+	@Html.ValidationSummary(true)
+	<fieldset>
+
+		@Html.Partial("_CreateOrEdit", Model)
+
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" value="Guardar" class="btn btn-success" />
+				@Html.ActionLink("Cancelar", "Index", null, new { @class = "btn" })
+			</div>
+		</div>
+	</fieldset>
+}

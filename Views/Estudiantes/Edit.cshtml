@@ -1,0 +1,27 @@
+﻿@model Entity.Models.Estudiante
+@{
+	//ViewBag.Title = "Edit";
+}
+
+<ul class="breadcrumb">
+	<li><a href="\">Tables</a> <span class="divider">/</span></li>
+	<li>@Html.ActionLink("Estudiantes", "Index", "Estudiantes") <span class="divider">/</span></li>
+	<li class="active">Edit</li>
+</ul>
+
+@using (Html.BeginForm("Edit", "Estudiantes", FormMethod.Post, new { @class = "form-horizontal" })) {
+	@Html.ValidationSummary(true)
+	<fieldset>
+		<legend>Estudiante</legend>
+
+			@Html.HiddenFor(model => model.Id)
+			@Html.Partial("_CreateOrEdit", Model)
+
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" value="Guardar" class="btn btn-success" />
+				@Html.ActionLink("Cancelar", "Index", null, new { @class = "btn" })
+			</div>
+		</div>
+	</fieldset>
+}

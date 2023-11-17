@@ -1,0 +1,46 @@
+﻿@using Entity.Models
+@model List<Asignatura>
+
+<div class="row">
+	<div class="span8">
+	</div>
+	<div class="span4">
+		@Html.ActionLink("Crear", "Create", null, new { @class = "btn btn-primary pull-right" })
+	</div>
+</div>
+
+<table class="table table-bordered table-striped table-condensed table-hover">
+	<thead>
+		<tr>
+			<th></th>
+			<th>
+				<small>@Html.DisplayNameFor(model => model[0].Nombre)</small>
+			</th>
+			<th>
+				<small>@Html.DisplayNameFor(model => model[0].Creditos)</small>
+			</th>
+			<th>
+				<small>@Html.DisplayNameFor(model => model[0].Activo)</small>
+			</th>
+		</tr>
+	</thead>
+@foreach (var item in (List<Asignatura>)Model) {
+	<tr>
+
+		<td>
+			<div class="btn-group">
+					<a href="@Url.Action("Edit", new { Id = item.Id })" class="btn btn-mini btn-warning"><i class="icon-pencil"></i> Editar</a>
+			</div>
+		</td>
+		<td>
+			<small>@item.Nombre</small>
+		</td>
+		<td>
+			<small>@item.Creditos</small>
+		</td>
+			<td>
+				<small>@item.Activo</small>
+			</td>
+	</tr>
+}
+</table>

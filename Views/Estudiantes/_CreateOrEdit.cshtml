@@ -1,0 +1,56 @@
+﻿@using Entity.Models;
+@model Estudiante
+
+<div class="control-group">
+	@Html.LabelFor(model => model.Identificacion, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Identificacion)
+		@Html.ValidationMessageFor(model => model.Identificacion)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Nombres, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Nombres)
+		@Html.ValidationMessageFor(model => model.Nombres)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Apellidos, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Apellidos)
+		@Html.ValidationMessageFor(model => model.Apellidos)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Edad, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Edad)
+		@Html.ValidationMessageFor(model => model.Edad)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.IdGenero, new { @class = "control-label" })
+	<div class="controls">
+		<select asp-for="IdGenero" asp-items="@((IEnumerable<SelectListItem>)ViewBag.Generos)" class="">
+		</select>
+		@Html.ValidationMessageFor(model => model.IdGenero)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Curso, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Curso)
+		@Html.ValidationMessageFor(model => model.Curso)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Activo, new { @class = "control-label" })
+	<div class="controls">
+		<select asp-for="Activo">
+			<option value="true" selected>Activo</option>
+			<option value="false">Inactivo</option>
+		</select>
+		@Html.ValidationMessageFor(model => model.Activo)
+	</div>
+</div>

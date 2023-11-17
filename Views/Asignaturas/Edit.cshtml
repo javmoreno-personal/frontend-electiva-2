@@ -1,0 +1,21 @@
+﻿@model Entity.Models.Asignatura
+@{
+	//ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm("Edit", "Asignaturas", FormMethod.Post, new { @class = "form-horizontal" })) {
+	@Html.ValidationSummary(true)
+	<fieldset>
+		<legend>Calificacion</legend>
+
+			@Html.HiddenFor(model => model.Id)
+			@Html.Partial("_CreateOrEdit", Model)
+
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" value="Guardar" class="btn btn-success" />
+				@Html.ActionLink("Cancelar", "Index", null, new { @class = "btn" })
+			</div>
+		</div>
+	</fieldset>
+}

@@ -1,0 +1,26 @@
+﻿@model Entity.Models.Asignatura
+
+<div class="control-group">
+	@Html.LabelFor(model => model.Nombre, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Nombre)
+		@Html.ValidationMessageFor(model => model.Nombre)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Creditos, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Creditos)
+		@Html.ValidationMessageFor(model => model.Creditos)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Activo, new { @class = "control-label" })
+	<div class="controls">
+		<select asp-for="Activo">
+			<option value="true" selected>Activo</option>
+			<option value="false">Inactivo</option>
+		</select>
+		@Html.ValidationMessageFor(model => model.Activo)
+	</div>
+</div>
